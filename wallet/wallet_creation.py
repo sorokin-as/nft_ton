@@ -1,6 +1,7 @@
 from tonsdk.contract.wallet import Wallets, WalletVersionEnum
 
 
+
 #mnemonics, pub_k, priv_k, wallet = Wallets.create(version=WalletVersionEnum.v3r2, workchain=0)
 
 mnemonics =  ['garlic', 'deal', 'hood', 'rocket', 'essay', 'noble', 'during', 'error', 'day', 'smart', 'unlock', 'juice', 'girl', 'silk', 'nominee', 'among', 'false', 'novel', 'position', 'differ', 'into', 'payment', 'lion', 'hip']
