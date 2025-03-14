@@ -18,7 +18,7 @@ async def send_tokens():
         keystore_dir = '/tmp/ton_keystore'
         Path(keystore_dir).mkdir(parents=True, exist_ok=True)
         
-        client = TonlibClient(ls_index=4, config=config, keystore=keystore_dir)
+        client = TonlibClient(ls_index=10, config=config, keystore=keystore_dir, tonlib_timeout=15)
         #print(wallet.address.to_string(True, True, True, True)) 
 
         await client.init()

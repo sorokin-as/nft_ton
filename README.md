@@ -1,6 +1,11 @@
 # nft_ton
 
+
+rm -rf .venv_nftton
+
 python3 -m venv .venv_nftton
+python3.12 -m venv .venv_nftton
+
 
 source .venv_nftton/bin/activate
 
