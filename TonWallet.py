@@ -46,11 +46,41 @@ class CryptoTonWallet:
         return wallet_address
 
 
-    def load_wallet_from_mnemonics(self):
-        mnemonics, pub_k, priv_k, wallet = Wallets.from_mnemonics(mnemonics=mnemonics, version=WalletVersionEnum.v3r2, workchain=0)
-        wallet_address = wallet.address.to_string(True, True, True, True)
-        print("Кошелек успешно загружен:", wallet_address)
-        return wallet_address
+    def load_wallet_from_mnemonics(self, filename):
+        try:
+            # Загружаем данные из .env файла
+            config = dotenv_values(filename)
+            
+            # Извлекаем мнемоники, публичный и приватный ключи
+            mnemonics = config.get("MNEMONICS", "").split()  # Преобразуем строку в список
+            pub_k = config.get("PUBLIC_KEY", "")
+            priv_k = config.get("PRIVATE_KEY", "")
+            
+            if not mnemonics:
+                raise ValueError("Мнемоники не найдены в файле.")
+            
+            # Восстанавливаем кошелек из мнемоник
+            _, _, _, wallet = Wallets.from_mnemonics(
+                mnemonics=mnemonics,
+                version=WalletVersionEnum.v3r2,
+                workchain=0
+            )
+            
+            # Получаем адрес кошелька
+            wallet_address = wallet.address.to_string(True, True, True, True)
+            print("Кошелек успешно загружен:", wallet_address)
+            return wallet_address
+        
+        except FileNotFoundError:
+            print(f"Файл {filename} не найден.")
+            return None
+        except Exception as e:
+            print(f"Ошибка при загрузке кошелька: {e}")
+            return None
+
+
+
+#-----
 
     def deposit(self, amount):
         if amount > 0:
