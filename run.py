@@ -17,5 +17,5 @@ def startWallet():
 
 
 if __name__ == "__main__":
-    FirstWallet =  CryptoTonWallet()
+    FirstWallet =  CryptoTonWallet('kQDIYtX0h9O7hZIORvmZFAqe3kmRGlZEDRXYS041eyaMjma9')
     #startWallet()
