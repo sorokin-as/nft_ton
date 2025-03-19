@@ -1,20 +1,18 @@
-import uuid
-from mnemonic import Mnemonic
+from tonsdk.contract.wallet import Wallets, WalletVersionEnum
 
-class CryptoWallet:
+class CryptoTonWallet:
     def __init__(self, owner_name, initial_balance=0):
-        self.owner_name = owner_name
-        self.balance = initial_balance
+        #self.owner_name = owner_name
+        #self.balance = initial_balance
         self.wallet_address = self.generate_wallet_address()
-        self.mnemonic_phrase = self.generate_mnemonic_phrase()
+        #self.mnemonic_phrase = self.generate_mnemonic_phrase()
 
-    def generate_wallet_address(self):
-        # Генерация уникального адреса кошелька
-        return str(uuid.uuid4())
+    def create_wallet(self):
+        mnemonics, pub_k, priv_k, wallet = Wallets.create(version=WalletVersionEnum.v3r2, workchain=0)
+        wallet_address = wallet.address.to_string(True, True, True, True)
+        return wallet_address
 
-    def generate_mnemonic_phrase(self):
-        # Генерация мнемонической фразы из 12 слов
-        mnemo = Mnemonic("english")
+    def load_wallet_from_mnemonics(self):
         return mnemo.generate(strength=128)  # 128 бит = 12 слов
 
     def deposit(self, amount):
