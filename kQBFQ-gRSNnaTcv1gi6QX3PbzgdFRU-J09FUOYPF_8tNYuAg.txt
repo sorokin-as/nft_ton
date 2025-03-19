@@ -1,0 +1,4 @@
+Мнемоники: ['barely', 'strike', 'sail', 'control', 'boy', 'trap', 'position', 'sustain', 'copper', 'control', 'weasel', 'ecology', 'clean', 'wealth', 'lunar', 'total', 'foam', 'liberty', 'cabin', 'mystery', 'embrace', 'human', 'case', 'purchase']
+Публичный ключ: b'\xa4\xb9\x15\x8f\xf58\x8fU\x07\xd0\xde\x95\xe6#\xf1\xc6\xf7V\xadi\xb1%7\xb0\xa0\xaaG\x87]\xd5=\x89'
+Приватный ключ: b'{W\x1d\xeeM\x9e\xef\x95,\xd08\xb3V`=\x98\xe3/\x90\x07/\x10\x99u\n\x9d\x9fq\xf1q\xd8\xb2\xa4\xb9\x15\x8f\xf58\x8fU\x07\xd0\xde\x95\xe6#\xf1\xc6\xf7V\xadi\xb1%7\xb0\xa0\xaaG\x87]\xd5=\x89'
+Адрес кошелька: kQBFQ-gRSNnaTcv1gi6QX3PbzgdFRU-J09FUOYPF_8tNYuAg
